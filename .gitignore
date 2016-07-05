@@ -1,0 +1,8 @@
+/.idea/
+
+/docker/exercice/simple_bo/.gradle/
+
+/docker/exercice/simple_bo/build/
+/docker/solution/simple_bo/.gradle/
+/docker/solution/simple_bo/build/
+

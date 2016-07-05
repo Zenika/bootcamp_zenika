@@ -1,0 +1,10 @@
+version: '2'
+services:
+  front:
+    build: ./simple_fo/
+    ports:
+      - "8090:80"
+  back:
+    build: ./simple_bo/
+    ports:
+      - "8080:8080"
