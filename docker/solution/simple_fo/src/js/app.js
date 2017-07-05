@@ -10,7 +10,8 @@ angular.module('simpleApp', [])
         var path = document.location.hostname;
 
         $scope.getContactList = function() {
-            var req = "http://" + path + ":8080/list";
+            //for local use add :8080 (without bridge network)
+            var req = "http://" + path + "/list";
             $http.get(req)
                 .then(function (response) {
                     $scope.contacts = response.data;
@@ -18,7 +19,8 @@ angular.module('simpleApp', [])
         };
 
         $scope.addContact = function () {
-            var req = "http://" + path + ":8080/add?name=" + $scope.newname;
+            //for local use add :8080 (without bridge network)
+            var req = "http://" + path + "/add?name=" + $scope.newname;
             $scope.newname = '';
 
             $http.get(req)
