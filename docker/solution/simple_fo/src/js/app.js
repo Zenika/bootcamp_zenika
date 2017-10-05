@@ -6,12 +6,16 @@ angular.module('simpleApp', [])
         $scope.contacts = [];
 
         $scope.newname = "";
-        
-        var path = document.location.hostname;
+
+        var bo_path = document.location.hostname;
+        if (document.location.hostname.match(/.*\.play-with-docker\.com/)) {
+            bo_path = bo_path.replace(/-\d+\./, '-8080.');
+        } else {
+            bo_path += ':8080';
+        }
 
         $scope.getContactList = function() {
-            //for local use add :8080 (without bridge network)
-            var req = "http://" + path + "/list";
+            var req = "http://" + bo_path + "/list";
             $http.get(req)
                 .then(function (response) {
                     $scope.contacts = response.data;
@@ -19,8 +23,7 @@ angular.module('simpleApp', [])
         };
 
         $scope.addContact = function () {
-            //for local use add :8080 (without bridge network)
-            var req = "http://" + path + "/add?name=" + $scope.newname;
+            var req = "http://" + bo_path + "/add?name=" + $scope.newname;
             $scope.newname = '';
 
             $http.get(req)
