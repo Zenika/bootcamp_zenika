@@ -3,7 +3,7 @@ services:
   front:
     build: ./simple_fo/
     ports:
-      - "80:80"
+      - "8090:80"
   back:
     build: ./simple_bo/
     ports:

@@ -6,3 +6,7 @@
 /docker/solution/simple_bo/.gradle/
 /docker/solution/simple_bo/build/
 
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore
